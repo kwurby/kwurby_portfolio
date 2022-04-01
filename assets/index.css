@@ -1,0 +1,108 @@
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+   
+
+::-webkit-scrollbar-thumb {
+    background: #c2c2c2;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+body { 
+    width: 100vw;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Roboto Mono', monospace;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+header {
+    margin-top: 4vw;
+    font-size:20vmin;
+    text-align: center;
+}
+header a {
+    color: #8a2be2;
+}
+#term {
+    text-align: left;
+
+    width: 90vmin;
+    height: 400px;
+    background-color: #F5F5F5;
+    margin: 10px;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 10px #b8b8b8;
+}
+#top {
+    height: 335px;
+    overflow-y: scroll;
+    overflow-x: wrap;
+    padding: 10px;
+}
+#bottom {
+    height: 20px;
+}
+#bottom a {
+    padding: 12px 20px;
+    height: 20px;  
+    margin: none;
+}
+#bottom input {
+    margin: none;
+    padding: 12px 20px;
+    height: 20px;
+    width: calc(90vmin - 200px);
+    outline: transparent;
+    border: none;
+    background-color: #F5F5F5;
+    font-family: 'Roboto Mono', monospace;
+}
+#enter {
+    color: #8a2be2;
+}
+#enter:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#info {
+    width: 110px;
+
+    color: #8a2be2;
+
+    transition: 0.15s;
+}
+#info:hover {
+    cursor: pointer;
+}
+#int{
+    padding: 5px;
+}
+
+.a1 {
+    font-size: 20px;
+    padding-right: 4px;
+}
+.a2 {
+    font-size: 20px;
+    padding-left: 4px;
+}
