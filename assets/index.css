@@ -20,89 +20,80 @@
 }
 
 body { 
-    width: 100vw;
     margin: 0;
     background-color: #fff;
     font-family: 'Roboto Mono', monospace;
+}
 
+#float {
+    padding: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 99999;
     justify-content: center;
     align-items: center;
+}
+#per{
+    height: 70px;
+    width: 50%;
 
-    overflow-x: hidden;
+    display: flex;
+    padding: none;
+    flex-direction: row;
+
+    align-items: center;
+}
+#cells {
+    height: 70px;
+    width: 50%;
+
+    display: flex;
+    padding: none;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
 }
 
-header {
-    margin-top: 4vw;
-    font-size:20vmin;
-    text-align: center;
-}
-header a {
-    color: #8a2be2;
-}
-#term {
-    text-align: left;
-
-    width: 90vmin;
-    height: 400px;
-    background-color: #F5F5F5;
-    margin: 10px;
-    border-radius: 10px;
-
-    box-shadow: 0px 0px 10px #b8b8b8;
-}
-#top {
-    height: 335px;
-    overflow-y: scroll;
-    overflow-x: wrap;
+.section {
     padding: 10px;
-}
-#bottom {
-    height: 20px;
-}
-#bottom a {
-    padding: 12px 20px;
-    height: 20px;  
-    margin: none;
-}
-#bottom input {
-    margin: none;
-    padding: 12px 20px;
-    height: 20px;
-    width: calc(90vmin - 200px);
-    outline: transparent;
-    border: none;
-    background-color: #F5F5F5;
-    font-family: 'Roboto Mono', monospace;
-}
-#enter {
-    color: #8a2be2;
-}
-#enter:hover {
-    cursor: pointer;
-    text-decoration: underline;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto;
+    transition: 0.25s;
+    color: rgb(34, 34, 34);
 }
 
-#info {
-    width: 110px;
-
-    color: #8a2be2;
-
-    transition: 0.15s;
-}
-#info:hover {
+.section:hover{
+    color: rgb(255, 148, 228);
     cursor: pointer;
 }
-#int{
-    padding: 5px;
+
+#page{
+    margin: 70px 0px 0px 0px;
+    width: 100%;
+    padding: none;
 }
 
-.a1 {
-    font-size: 20px;
-    padding-right: 4px;
+.pfp {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px 15px 10px 15px;
+    outline: #ff45ab solid 2px;
+    box-shadow: #ff45ab 0px 0px 10px;
+    transition: 0.25s;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
-.a2 {
-    font-size: 20px;
-    padding-left: 4px;
+
+.pfp:hover{
+    transform: rotate(25deg);
 }
