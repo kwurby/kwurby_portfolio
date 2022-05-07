@@ -1,8 +1,6 @@
 .iContainer {
     display: flex;
     flex-direction: column;
-    outline: #ff45ab solid 2px;
-    box-shadow: #ff45ab 0px 0px 10px;
 
     margin: 40px;
     margin-top: 200px;
@@ -11,18 +9,26 @@
     height: 250px;
 
     border-radius: 6px;
-    background-color: #ffffff;
     justify-content: center;
+    overflow: auto;
+    overflow-x: hidden;
     
 }
 
 .info {
+    bottom: 0px;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    background: var(--color-pink);
+    background-color: linear-gradient(to top,  var(--dark-1),10px , var(--color-pink));
+    z-index: 0;
 }
 
 #skills {
@@ -31,33 +37,64 @@
     margin: 0px;
     height: 400px;
     width: 100%;
-    background: linear-gradient(to bottom, #82949b, 100px, #00e48c);
+    background: var(--dark-1);
 }
+/* Arrow */
 .iContainer svg {
     display: block;
     text-align: center;
     height: 50%;
-    fill: #82949b4d
+    fill: var(--color-transparent);
 }
 
+.ictxt p, .ictxt h1 {
+    margin: 20px 30px 5px 30px;
+    color: var(--text-color);
+    width: auto;
+}
 
+@media screen and (max-width: 948px) {
+    #iconInfo {
+        position: relative;
+        border-radius: 6px;
+        background-color: #72727234;
+        height: 35%;
+        bottom: -83px;
+        width: 99%;
+        backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+@media screen and (min-width: 948px) {
+    #iconInfo {
+        position: relative;
+        border-radius: 6px;
+        background-color: #72727234;
+        height: 92%;
+        width: calc(100% - 200px);
+        left: 190px;
+        min-width: 227px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
 
 
 .active {
-    filter: drop-shadow(0px 0px 10px #20202034);
+    filter: drop-shadow(0px 0px 10px var(--drop-shadow));
     position: absolute;
     width: 90px;
-    fill: rgb(255, 255, 255);
+    fill: var(--text-color);
     z-index: 1;
 }
 
-
-
 .skill {
-    filter: drop-shadow(0px 0px 10px #20202034);
+    filter: drop-shadow(0px 0px 10px var(--drop-shadow));
     position: absolute;
     width: 90px;
-    fill: rgba(255, 255, 255, 0.651);
+    fill: var(--white-transparent);
     z-index: 1;
 }
 

@@ -54,7 +54,7 @@ function resetpos(reset){
         });
     }
 }
-// stops arrow animation ================================================================
+// functions ================================================================
 function stopArrow(){
     anime({
         targets: '.arrow',
@@ -64,7 +64,17 @@ function stopArrow(){
     }).finished.then(function(){
         $('.arrow').css('display', 'none');
         letContent = true;
+        textboxPop()
     });
+}
+
+function textboxPop(){
+    $('#iconInfo').css('display', 'block');
+    anime({
+        targets: '#iconInfo',
+        scale: '1',
+        duration: 800
+    })
 }
 
 // animations ================================================================
@@ -141,7 +151,7 @@ $(document).ready(function(){
                     targets: this,
                     top: `${elloc.top - 270}px`,
                     left: '30%',
-                    fill: 'rgba(255, 69, 171, 1)',
+                    fill: 'rgba(255, 255, 255, 1)',
                     easing: 'easeOutElastic(1, .6)'
                 });
 
