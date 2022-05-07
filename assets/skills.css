@@ -26,7 +26,7 @@
     margin: 0px;
     padding: 0px;
     border-width: 0px;
-    background: var(--color-pink);
+    /* background: var(--color-pink); */
     background-color: linear-gradient(to top,  var(--dark-1),10px , var(--color-pink));
     z-index: 0;
 }
@@ -57,7 +57,7 @@
     #iconInfo {
         position: relative;
         border-radius: 6px;
-        background-color: #72727234;
+        background-color: var(--color-transparent);
         height: 35%;
         bottom: -83px;
         width: 99%;
@@ -71,7 +71,7 @@
     #iconInfo {
         position: relative;
         border-radius: 6px;
-        background-color: #72727234;
+        background-color: var(--color-transparent);
         height: 92%;
         width: calc(100% - 200px);
         left: 190px;

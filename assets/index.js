@@ -55,6 +55,8 @@ function resetpos(reset){
     }
 }
 // functions ================================================================
+
+//1
 function stopArrow(){
     anime({
         targets: '.arrow',
@@ -65,16 +67,65 @@ function stopArrow(){
         $('.arrow').css('display', 'none');
         letContent = true;
         textboxPop()
+        arrowAni.pause();
     });
 }
-
+//2
 function textboxPop(){
     $('#iconInfo').css('display', 'block');
     anime({
         targets: '#iconInfo',
         scale: '1',
         duration: 800
-    })
+    });
+}
+//3
+function textboxPopInfo(ID){
+    var half= {
+        halfof: 0,
+    }
+    $('#iconInfo').css('transform', 'scale(1)');
+    anime({
+        targets: ['#iconInfo', half],
+        halfof: 10,
+        translateY: -20,
+        duration: 150,
+        direction: 'alternate',
+        easing: 'cubicBezier(.5, .05, .1, .3)',
+        update: function() {
+            if (half.halfof != 10) return;
+            changetxt(ID);
+            Dev('textboxPopInfo');
+        }
+    }).finished.then(function(){
+        $('#iconInfo').css('transform', 'translateY(0)');
+    });
+}
+//4
+function changetxt(ID) {
+    var title, text;
+    switch( ID ) {
+        case 'vue':
+            title = 'Vue.js';
+            text = 'place holder';
+            break
+        case 'css':
+            title = 'Css';
+            text = 'place holder';
+            break
+        case 'html':
+            title = 'Html';
+            text = 'place holder';
+            break
+        case 'js':
+            title = 'Javascript';
+            text = 'place holder';
+            break
+        case 'electron':
+            title = 'Electron';
+            text = 'place holder';
+    }
+    $('#iconInfo').html(`<h1>${title}</h1><p>${text}</p>`);
 }
 
 // animations ================================================================
@@ -131,22 +182,24 @@ $(document).ready(function(){
         });
 
         $('.skill').click(function(){
-            if(coolDown == null || coolDown == 0 && $(this).attr('class') != 'skill active'){
-                if(coolDown == null){
-                    stopArrow();
-                }
+            if(coolDown == null || coolDown == 0 && $(this).attr('class') != 'skill active') {
+                //vars
+                var thisId = $(this).attr("id");
+                var elloc = $('.iContainer').position();
+                
+                //checks
+                if(coolDown == null) stopArrow();
+                if(coolDown == null) changetxt(thisId);
+                if(lastId == null) var testbox = false;
+                if(lastId != null) var testbox = true;
 
-
+                //resets
                 $(this).toggleClass('active');
                 coolDown = 1;
-                var thisId = $(this).attr("id")
                 $(this).addClass('pending');
                 resetpos(lastId);
                 $(this).removeClass('pending');
 
-                var thisId = $(this).attr("id");
-
-                var elloc = $('.iContainer').position();
                 anime({
                     targets: this,
                     top: `${elloc.top - 270}px`,
@@ -155,14 +208,18 @@ $(document).ready(function(){
                     easing: 'easeOutElastic(1, .6)'
                 });
 
+                //text animation
+                if(testbox) textboxPopInfo(thisId);
+
+                //track
                 lastId = thisId;
                 coolDown = 0;
+
             }
         });
 });
 
 //TODO: 1. convert to vue project
-//TODO: 2. make the text spill out of the icon
 //TODO: 3. figure out a way to make the waves responsive in some way to the user
 //TODO: 4. make the nav not look totally terrible LMAO.
 //TODO: 5. make title letters resposive
