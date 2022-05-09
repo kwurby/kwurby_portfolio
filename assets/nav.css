@@ -5,15 +5,12 @@ body {
     padding: 0px;
     font-family: 'Roboto Mono', monospace;
     color: rgba(0, 0, 0, 0);
+    background-color: var(--dark-1);
 }
 
 body:hover {
     color: var(--color-transparent);
     transition: color 0.3s ease;
-}
-
-#menu {
-    color: var(--text-color);
 }
 
 #float {
@@ -32,7 +29,7 @@ body:hover {
     align-items: center;
     
     transform: translate(-50%);
-    box-shadow: var(--drop-shadow) 0px 0px 10px;
+    box-shadow: var(--dark-2) 0px 0px 10px;
     
     margin: 5px;
     border-radius: 10px;
@@ -72,17 +69,9 @@ body:hover {
     cursor: pointer;
 }
 
-.pfp {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin: 10px 15px 10px 15px;
-    outline: var(--color-pink) solid 2px;
-    transition: 0.25s;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-.pfp:hover{
-    transform: rotate(25deg);
+.menuD {
+    height: 35px;
+    margin: auto 15px auto 20px;
+    fill: var(--cute-yellow);
+    box-shadow: var(--dark-2) 0px 0px 10px;
 }

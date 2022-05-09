@@ -1,11 +1,12 @@
 :root {
-    --drop-shadow: #72727234;
-    --color-pink: #ff45ab;
-    --dark-1: #2b1728;
-
-    --text-color: #ffffff;
-    --color-transparent: #7e627d4d;
+    --drop-shadow: rgba(114, 114, 114, 0.204);
+    --color-pink: rgba(255, 69, 171, 1);
+    --dark-1: rgba(43, 23, 40, 1);
+    --dark-2: rgba(32, 18, 30, 1);
+    --text-color: rgba(255, 255, 255, 1);
+    --color-transparent: rgba(126, 98, 125, 0.302);
     --white-transparent: rgba(255, 255, 255, 0.651);
+    --cute-yellow: rgba(253, 253, 150, 1);
 }
 
 
@@ -28,4 +29,11 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-pink);
+}
+
+.nosel {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

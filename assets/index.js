@@ -217,7 +217,88 @@ $(document).ready(function(){
 
             }
         });
+        //Nav==========================================================
+        $('.menuD').hover(function(){
+            anime({
+                targets: this,
+                scale: '1.1',
+                rotate: '0deg',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        
+        } , function(){
+            anime({
+                targets: this,
+                scale: '1',
+                rotate: '-90deg',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+        //Project==========================================================
+
+        $('.proj').hover(function(){
+            anime({
+                targets: this,
+                scale: '1.1',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        
+        } , function(){
+            anime({
+                targets: this,
+                scale: '1',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+        //github==========================================================
+        $('.link').hover(function(){
+            anime({
+                targets: this,
+                scale: '1.1',
+                background: 'rgba(253, 253, 150, 1)',
+                color: 'rgba(255, 69, 171, 1)',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        
+        } , function(){
+            anime({
+                targets: this,
+                scale: '1',
+                background: 'rgba(253, 253, 150, 0)',
+                color: 'rgba(253, 253, 150, 1)',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
 });
+
+//http request===============================================================
+//https://api.github.com/users/VIOLETUMM
+function Github(json){
+    var avatar = json.avatar_url;
+    var bio = json.bio;
+    var followers = json.followers;
+    var link = json.html_url;
+    var name = json.name;
+    var repos = json.public_repos;
+
+    $('.pfp').attr('src', avatar);
+    $('.Gitpfp').attr('src', avatar);
+    $('.gitCont h1').html(name);
+
+    $('.gitCont .followers').html('followers: ' + followers);
+    $('.gitCont .repo').html('repos: ' + repos);
+    $('.gitCont .bio').html(bio);
+    $('.gitCont .link').attr('href', link);
+}
+
+fetch("https://api.github.com/users/VIOLETUMM")
+    .then(response => {
+        if (!response.ok) Dev(reponse.status);
+        return response.json();
+}).then(MyInfo => {
+    Dev(MyInfo);
+    Github(MyInfo);
+}).catch(error => console.log(error));
 
 //TODO: 1. convert to vue project
 //TODO: 3. figure out a way to make the waves responsive in some way to the user
