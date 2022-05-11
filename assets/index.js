@@ -256,7 +256,7 @@ $(document).ready(function(){
                 targets: this,
                 scale: '1.1',
                 background: 'rgba(253, 253, 150, 1)',
-                color: 'rgba(255, 69, 171, 1)',
+                color: 'rgba(32, 18, 30, 1)',
                 easing: 'easeOutElastic(1, .6)'
             });
         
@@ -267,6 +267,40 @@ $(document).ready(function(){
                 background: 'rgba(253, 253, 150, 0)',
                 color: 'rgba(253, 253, 150, 1)',
                 easing: 'easeOutElastic(1, .6)'
+            });
+        });
+
+        $('.duck a').hover(function(){
+            anime({
+                targets: this,
+                scale: '1.1',
+                background: 'rgba(253, 253, 150, 1)',
+                color: 'rgba(32, 18, 30, 1)',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        
+        } , function(){
+            anime({
+                targets: this,
+                scale: '1',
+                background: 'rgba(253, 253, 150, 0)',
+                color: 'rgba(253, 253, 150, 1)',
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+
+        $('.contcon a').hover(function(){
+            anime({
+                targets: this,
+                scale: '1.1',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(255, 69, 171, 1) 50%, rgba(253, 253, 150, 1))'
+            });
+        
+        } , function(){
+            anime({
+                targets: this,
+                scale: '1',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(255, 69, 171, 1) 20%, rgba(253, 253, 150, 1))'
             });
         });
 });
