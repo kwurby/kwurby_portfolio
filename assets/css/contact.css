@@ -23,6 +23,7 @@
     margin: 20px;
     background-color: var(--cute-yellow);
     border-radius: 6px;
+    box-shadow: var(--dark-2) 0px 0px 10px;
     text-decoration: none;
     color: var(--dark-2);
 

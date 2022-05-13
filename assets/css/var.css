@@ -37,3 +37,18 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+body { 
+    overflow-x: hidden;
+    overflow-y: overlay;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(0, 0, 0, 0);
+    background-color: var(--dark-1);
+    transition: 0.24s;
+}
+
+body:hover {
+    color: rgba(0, 0, 0, 0.418);
+}

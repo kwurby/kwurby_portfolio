@@ -107,23 +107,23 @@ function changetxt(ID) {
     switch( ID ) {
         case 'vue':
             title = 'Vue.js';
-            text = 'place holder';
+            text = 'I think I have some basic vue3 knowledge and can use it without punching my screen from the errors.';
             break
         case 'css':
             title = 'Css';
-            text = 'place holder';
+            text = 'Messy but yes, I can use it I definatly prefer lessjs for css.';
             break
         case 'html':
             title = 'Html';
-            text = 'place holder';
+            text = 'pretty much 100% here, I can use it without any problems.';
             break
         case 'js':
             title = 'Javascript';
-            text = 'place holder';
+            text = '80% Done by me and 20% from Stack Over Flow :) Hehe! However, I do read the docs first and can figure most things out on my own.';
             break
         case 'electron':
             title = 'Electron';
-            text = 'place holder';
+            text = 'WOO! love this framework, I can use icpMain and only cry a little about it not working right.';
     }
     $('#iconInfo').html(`<h1>${title}</h1><p>${text}</p>`);
 }
@@ -334,7 +334,5 @@ fetch("https://api.github.com/users/VIOLETUMM")
     Github(MyInfo);
 }).catch(error => console.log(error));
 
-//TODO: 1. convert to vue project
 //TODO: 3. figure out a way to make the waves responsive in some way to the user
-//TODO: 4. make the nav not look totally terrible LMAO.
 //TODO: 5. make title letters resposive
