@@ -1,0 +1,204 @@
+@pale-pink: #f7d1cdff;
+@queen-pink: #e8c2caff;
+@thistle: #d1b3c4ff;
+@glossy-grape: #b392acff;
+@old-lavender: #735d78ff;
+//or
+@white: #ffffff;
+@rich-black-fogra-39: #0a0908ff;
+@gunmetal: #22333bff;
+@almond: #eae0d5ff;
+@khaki-web: #c6ac8fff;
+@umber: #5e503fff;
+
+//root==============================================================
+
+body { 
+    overflow-x: hidden;
+    overflow-y: overlay;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(0, 0, 0, 0);
+    background-color: @khaki-web;
+    transition: 0.24s;
+}
+
+body:hover {
+    color: rgba(0, 0, 0, 0.418);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+    display: none;
+}
+   
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-clip: padding-box;
+    box-shadow: inset 0 0 0 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.733);
+}
+
+#page {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: @khaki-web;
+    flex-direction: column;
+}
+//title==============================================================
+#top {
+    height: 400px;
+    background-color: @khaki-web;
+}
+
+#mainTitle {
+    color: @almond;
+    font-family: 'Frijole', cursive;
+    font-size: 70px;
+    pre {
+        padding: 0px;
+        margin: 0px;
+    }
+    position: relative;
+    top: 200px;
+    left: 20%;
+    //970px
+}
+//Skills==============================================================
+#skills {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: auto;
+    background-color: @khaki-web;
+    flex-direction: column;
+}
+
+.skills {
+    border-radius: 6px;
+    flex-direction: column;
+    background-color: @almond;
+    color: @gunmetal;
+    @media (min-width: 970px) {
+        width: 50%;
+    }
+    @media (max-width: 970px) {
+        width: 90%;
+    }
+    overflow: hidden;
+}
+
+.window-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.window {
+    background-color: @white;
+    height: 350px;
+
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    width: 10%;
+    background-color: @almond;
+    border-radius: 6px 6px 0px 0px;
+    outline: none;
+    border: none;
+    text-align: left;
+    transition: 0.12s;
+    svg {
+        width: 15%;
+        height: auto;
+        margin-right: 5px;
+    }
+}
+.tab:not(.active):hover {
+    filter: brightness(0.9);
+}
+
+#html svg {
+    width: 17%;
+}
+
+.active {
+    background-color: @white;
+}
+
+
+//classes==============================================================
+
+//button style
+.button {
+    position: relative;
+    padding: 15px 25px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: auto;
+    background-color: @rich-black-fogra-39;
+    color: @almond;
+    border-radius: 6px;
+
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+//section style
+.section {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+//float center
+.float-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Center
+.parent-center {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    position: relative;
+    margin: auto;
+}
+
+//misc
+.wrap-word {
+    overflow-wrap: break-word;
+}
+
+.hide {
+    display: none;
+}
