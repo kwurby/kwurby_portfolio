@@ -1,26 +1,23 @@
-@pale-pink: #f7d1cdff;
-@queen-pink: #e8c2caff;
-@thistle: #d1b3c4ff;
-@glossy-grape: #b392acff;
-@old-lavender: #735d78ff;
-//or
 @white: #ffffff;
 @rich-black-fogra-39: #0a0908ff;
 @gunmetal: #22333bff;
-@almond: #eae0d5ff;
-@khaki-web: #c6ac8fff;
-@umber: #5e503fff;
+@gunmetal-t: rgba(34, 51, 59, 0.5);
+
+@first-color: rgb(29, 129, 196);
+@second-color: rgb(206, 206, 206);
 
 //root==============================================================
-
-body { 
+html {
+    padding: 0px;
+}
+body {
+    margin: 0px;
     overflow-x: hidden;
     overflow-y: overlay;
-    margin: 0px;
     padding: 0px;
     font-family: 'Roboto Mono', monospace;
     color: rgba(0, 0, 0, 0);
-    background-color: @khaki-web;
+    background-color: @first-color;
     transition: 0.24s;
 }
 
@@ -50,22 +47,28 @@ body:hover {
 }
 
 #page {
+    margin: 0px;
+    padding: 0px;
     position: relative;
     top: 0px;
     left: 0px;
-    width: 100%;
     height: 100%;
-    background-color: @khaki-web;
+    background-color: @second-color;
     flex-direction: column;
 }
 //title==============================================================
 #top {
-    height: 400px;
-    background-color: @khaki-web;
+    position: relative;
+    height: 50vh;
+    padding: 0px;
+    margin: 0px;
+    background: none;
+    z-index: 2;
 }
 
 #mainTitle {
-    color: @almond;
+    text-shadow: @gunmetal-t 0px 0px 8px;
+    color: @white;
     font-family: 'Frijole', cursive;
     font-size: 70px;
     pre {
@@ -73,23 +76,27 @@ body:hover {
         margin: 0px;
     }
     position: relative;
-    top: 200px;
+    top: 18%;
     left: 20%;
     //970px
 }
 //Skills==============================================================
 #skills {
-    padding-top: 100px;
+    padding-top: 0px;
     padding-bottom: 100px;
+    z-index: 1;
     height: auto;
-    background-color: @khaki-web;
+    background-image: linear-gradient(@second-color 1%, @first-color);
+    background-color: @first-color;
     flex-direction: column;
 }
 
 .skills {
+    box-shadow: @gunmetal-t 0px 0px 10px;
+    z-index: 2;
     border-radius: 6px;
     flex-direction: column;
-    background-color: @almond;
+    background-color: @second-color;
     color: @gunmetal;
     @media (min-width: 970px) {
         width: 50%;
@@ -101,22 +108,25 @@ body:hover {
 }
 
 .window-top {
+    z-index: 5;
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 .window {
+    z-index: 5;
     background-color: @white;
     height: 350px;
 
 }
 
 .tab {
+    z-index: 5;
     display: flex;
     flex-direction: row;
     padding: 5px;
     width: 10%;
-    background-color: @almond;
+    background-color: @second-color;
     border-radius: 6px 6px 0px 0px;
     outline: none;
     border: none;
@@ -140,6 +150,16 @@ body:hover {
     background-color: @white;
 }
 
+.wave {
+    width: 100vw;
+    z-index: 2;
+    
+    position: absolute;
+    
+    top: (50px);
+    fill: @first-color
+}
+
 
 //classes==============================================================
 
@@ -154,7 +174,7 @@ body:hover {
     border: none;
     width: auto;
     background-color: @rich-black-fogra-39;
-    color: @almond;
+    color: @second-color;
     border-radius: 6px;
 
     transition: 0.25s;
