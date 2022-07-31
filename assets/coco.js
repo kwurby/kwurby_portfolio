@@ -33,7 +33,7 @@ $(document).ready(function() {
     //     nGold += 1
 
     function main() {
-        chance = Math.floor(Math.random() * 100) + 1
+        chance = Math.floor(Math.random() * 130) + 1
         if (chance <= 1) {
             return 'Mythic';
         } else if (chance <= 6) {
