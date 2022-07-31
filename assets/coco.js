@@ -18,13 +18,13 @@ $(document).ready(function() {
     function main() {
         if ((Math.floor(Math.random() * 100) + 1) <= 1) {
             return 'Mythic';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 9) {
+        } else if ((Math.floor(Math.random() * 100) + 1) <= 8) {
             return 'Legendary';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 16) {
+        } else if ((Math.floor(Math.random() * 100) + 1) <= 12) {
             return 'Epic';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 26) {
+        } else if ((Math.floor(Math.random() * 100) + 1) <= 21) {
             return 'Rare';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 46) {
+        } else if ((Math.floor(Math.random() * 100) + 1) <= 36) {
             return 'Uncommon';
         } else {
             return 'Common';
