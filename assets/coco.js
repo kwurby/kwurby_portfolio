@@ -15,16 +15,34 @@ $(document).ready(function() {
     // Legendary 1-8
     // Mythic 1-2
 
+    // chance = (random.randint(1,10000))
+    // if chance <= 7992:
+    //     debugger("Blue")
+    //     nBlue += 1
+    // elif chance > 7992 and chance <= (1598 + 7992):
+    //     debugger("Purple")
+    //     nPurple += 1
+    // elif chance > 9590 and chance <= (9590 + 320):
+    //     debugger("Pink")
+    //     nPink += 1
+    // elif chance > 9910 and chance <= (9910 + 64):
+    //     debugger("Red")
+    //     nRed += 1
+    // elif chance > 9974:
+    //     debugger("Gold")
+    //     nGold += 1
+
     function main() {
-        if ((Math.floor(Math.random() * 100) + 1) <= 1) {
+        chance = Math.floor(Math.random() * 100) + 1
+        if (chance <= 1) {
             return 'Mythic';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 8) {
+        } else if (chance <= 6) {
             return 'Legendary';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 12) {
+        } else if (chance <= 15) {
             return 'Epic';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 21) {
+        } else if (chance <= 31) {
             return 'Rare';
-        } else if ((Math.floor(Math.random() * 100) + 1) <= 36) {
+        } else if (chance <= 57) {
             return 'Uncommon';
         } else {
             return 'Common';
