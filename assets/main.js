@@ -18,8 +18,7 @@ $(document).ready(function() {
 
         $('.window').html(winCont)
     });
-    // let el = document.querySelector('#mainTitle .asdfas');
-    // RoughNotation.annotate(el, { type: 'highlight', color: 'yellow', iterations: 1, multiline: true }).show();
+
     $('.navObj a').click(function() {
         console.log(this);
     });
