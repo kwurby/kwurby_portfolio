@@ -61,11 +61,16 @@ $(document).ready(function() {
 
     var rarity = main();
     var numberv = number(rarity);
-    console.log(rarity + '-' + numberv);
+    var a = rarity + '-' + numberv
 
     var rarity = main();
     var numberv = number(rarity);
-    console.log(rarity + '-' + numberv);
+    var b = rarity + '-' + numberv;
+
+    document.getElementById('output').innerHTML = `
+        <p>${a}</p>
+        <p>${b}</p>
+    `;
 
 
 });
