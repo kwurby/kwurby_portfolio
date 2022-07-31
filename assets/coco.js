@@ -82,16 +82,16 @@ $(document).ready(function() {
     var funreturn = number(rarity);
     var numberv = funreturn[0]
     var color1 = funreturn[1]
-    var a = rarity + '‎' + numberv
+    var a = rarity + '' + numberv
 
     var rarity = main();
     var funreturn = number(rarity);
     var numberv = funreturn[0]
     var color2 = funreturn[1]
-    var b = rarity + '‎' + numberv;
+    var b = rarity + '' + numberv;
 
-    document.getElementById('a').innerHTML = a;
-    document.getElementById('b').innerHTML = b;
+    $('#a').html(a);
+    $('#b').html(b);
 
     $('#a').parent().children().css('color', color1);
     $('#b').parent().children().css('color', color2);
