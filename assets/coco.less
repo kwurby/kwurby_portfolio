@@ -23,6 +23,7 @@ body {
     height: 100%;
   
     border-radius: 10px;
+    cursor: pointer;
   
     width: 100%;
     transform-style: preserve-3d;
@@ -55,6 +56,7 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 5px;
+    color: #fff;
 }
   
 .back {
@@ -75,4 +77,51 @@ body {
 .flip {
     transform: rotateY(-180deg);
 }
-  
+
+#bottom {
+    font-family: 'Questrial', sans-serif;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: #0a2c44;
+    padding: 0px;
+    margin: 0px;
+}
+
+.left {
+    display: flex;
+    float: left;
+    width: 10%;
+    height: 100%;
+    background-color: #0a2c44;
+    color: #fff;
+    font-size: 26px;
+
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: #fff;
+        border: #fff solid 2px;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.25s;
+        margin-left: 50px;
+    }
+    a:hover {
+        background-color: #fff;
+        color: #0a2c44;
+        cursor: pointer;
+    }
+}
+
+.disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+}

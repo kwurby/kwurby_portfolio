@@ -71,32 +71,48 @@ $(document).ready(function() {
             return [(Math.floor(Math.random() * Epic) + 1), '#4a228a'];
         }
         else if (rarity == 'Legendary'){
-            return [(Math.floor(Math.random() * Legendary) + 1), '#e5ff00'];
+            return [(Math.floor(Math.random() * Legendary) + 1), '#ff8800'];
         }
         else if (rarity == 'Mythic'){
-            return [(Math.floor(Math.random() * Mythic) + 1), '#ff00ff'];
+            return [(Math.floor(Math.random() * Mythic) + 1), '#e5ff00'];
         }
     }
-
-    var rarity = main();
-    var funreturn = number(rarity);
-    var numberv = funreturn[0]
-    var color1 = funreturn[1]
-    var a = rarity + '' + numberv
-
-    var rarity = main();
-    var funreturn = number(rarity);
-    var numberv = funreturn[0]
-    var color2 = funreturn[1]
-    var b = rarity + '' + numberv;
-
-    $('#a').html(a);
-    $('#b').html(b);
-
-    $('#a').parent().children().css('color', color1);
-    $('#b').parent().children().css('color', color2);
 
     $(".card").click( function() {
         $(this).toggleClass('flip');
     });
+
+    function cardLoad(){
+        var rarity = main();
+        var funreturn = number(rarity);
+        var numberv = funreturn[0]
+        var color1 = funreturn[1]
+        var a = rarity + '' + numberv
+
+        var rarity = main();
+        var funreturn = number(rarity);
+        var numberv = funreturn[0]
+        var color2 = funreturn[1]
+        var b = rarity + '' + numberv;
+
+        $('#a').html(a);
+        $('#b').html(b);
+
+        $('#a').css('color', color1);
+        $('#b').css('color', color2);
+    }
+
+    cardLoad();
+
+    $(".left a").click( function() {
+        $(".left a").addClass('disabled');
+        $(".card").addClass('disabled');
+        setTimeout(function(){ 
+            cardLoad();
+            $(".left a").removeClass('disabled');
+            $(".card").removeClass('disabled');
+        }, 1000);
+        $(".card").removeClass('flip');
+    });
+
 });
