@@ -58,37 +58,45 @@ $(document).ready(function() {
         var Mythic = 2;
         
         if (rarity == 'Common'){
-            return Math.floor(Math.random() * Common) + 1
+            return [(Math.floor(Math.random() * Common) + 1), '#fff'];
+
         }
         else if (rarity == 'Uncommon'){
-            return Math.floor(Math.random() * Uncommon) + 1
+            return [(Math.floor(Math.random() * Uncommon) + 1), '#00a023'];
         }
         else if (rarity == 'Rare'){
-            return Math.floor(Math.random() * Rare) + 1
+            return [(Math.floor(Math.random() * Rare) + 1), '#0046dd'];
         }
         else if (rarity == 'Epic'){
-            return Math.floor(Math.random() * Epic) + 1
+            return [(Math.floor(Math.random() * Epic) + 1), '#4a228a'];
         }
         else if (rarity == 'Legendary'){
-            return Math.floor(Math.random() * Legendary) + 1
+            return [(Math.floor(Math.random() * Legendary) + 1), '#e5ff00'];
         }
         else if (rarity == 'Mythic'){
-            return Math.floor(Math.random() * Mythic) + 1
+            return [(Math.floor(Math.random() * Mythic) + 1), '#ff00ff'];
         }
     }
 
     var rarity = main();
-    var numberv = number(rarity);
-    var a = rarity + '-' + numberv
+    var funreturn = number(rarity);
+    var numberv = funreturn[0]
+    var color1 = funreturn[1]
+    var a = rarity + '‎' + numberv
 
     var rarity = main();
-    var numberv = number(rarity);
-    var b = rarity + '-' + numberv;
+    var funreturn = number(rarity);
+    var numberv = funreturn[0]
+    var color2 = funreturn[1]
+    var b = rarity + '‎' + numberv;
 
-    document.getElementById('output').innerHTML = `
-        <p>${a}</p>
-        <p>${b}</p>
-    `;
+    document.getElementById('a').innerHTML = a;
+    document.getElementById('b').innerHTML = b;
 
+    $('#a').parent().children().css('color', color1);
+    $('#b').parent().children().css('color', color2);
 
+    $(".card").click( function() {
+        $(this).toggleClass('flip');
+    });
 });
