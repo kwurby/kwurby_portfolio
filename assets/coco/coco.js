@@ -48,27 +48,27 @@ $(document).ready(function() {
         var Mythic = document.getElementById('Mythic').value;
         //NOTE: =========================================================================================
         if (rarity == 'Common'){
-            return [(Math.floor(Math.random() * Common) + 1), '#fff'];
+            return [(Math.floor(Math.random() * Common) + 1), '#727272'];
         }
 
         //NOTE: =========================================================================================
         else if (rarity == 'Uncommon'){
-            return [(Math.floor(Math.random() * Uncommon) + 1), '#00a023'];
+            return [(Math.floor(Math.random() * Uncommon) + 1), '#00a703'];
         }
 
         //NOTE: =========================================================================================
         else if (rarity == 'Rare'){
-            return [(Math.floor(Math.random() * Rare) + 1), '#0046dd'];
+            return [(Math.floor(Math.random() * Rare) + 1), '#35abd6'];
         }
 
         //NOTE: =========================================================================================
         else if (rarity == 'Epic'){
-            return [(Math.floor(Math.random() * Epic) + 1), '#4a228a'];
+            return [(Math.floor(Math.random() * Epic) + 1), '#a42cc7'];
         }
 
         //NOTE: =========================================================================================
         else if (rarity == 'Legendary'){
-            return [(Math.floor(Math.random() * Legendary) + 1), '#ff8800'];
+            return [(Math.floor(Math.random() * Legendary) + 1), '#ddc11f'];
         }
 
         //NOTE: =========================================================================================
@@ -116,85 +116,38 @@ $(document).ready(function() {
     });
 
     function cardLoad(){
-        var fackC = 5;
-
-        var fakeA, fakeB = false;
-
         //NOTE: card 1
         var rarity = main();
+        if (rarity == 'Mythic'){
+            $("#a").addClass('Mythic')
+        };
+
         var funreturn = number(rarity);
         var numberv = funreturn[0]
         var color1 = funreturn[1]
-        var a = rarity + '' + numberv;
-        if ((Math.floor(Math.random() * fackC) + 1) == 1){
-            var fakeVal1 = fakeout(rarity);
-            console.log(fakeVal1);
-            fakeA = true;
-        }
+        var a = rarity + '-' + numberv;
+        $('#a').html(a);
+        $('#a').css('color', color1);
 
         //NOTE: card 2
         var rarity = main();
+        if (rarity == 'Mythic'){
+            $("#b").addClass('Mythic')
+        };
         var funreturn = number(rarity);
         var numberv = funreturn[0]
         var color2 = funreturn[1]
-        var b = rarity + '' + numberv;
-        if ((Math.floor(Math.random() * fackC) + 1) == 1){
-            var fakeVal2 = fakeout(rarity);
-            console.log(fakeVal2);
-            fakeB = true;
-        }
-        //NOTE: A
-        if (fakeA == true){
-            rarity = fakeVal1;
-            console.log(rarity);
-
-            var fakeNum = number(rarity);
-            numberv = fakeNum[0];
-            var color3 = fakeNum[1];
-            var A = rarity + '' + numberv;
-
-            $('#a').html(A);
-            $('#a').css('color', color3);
-            setTimeout(function(){ 
-                $('#a').animate({
-                    color: color1
-                }, 1000, function(){
-                    $('#a').html(a);
-                    $('#a').css('color', color1);
-                });
-            }, 3000);
-        } else {
-            $('#a').html(a);
-            $('#a').css('color', color1);
-        }
-
-        //NOTE: B
-        if (fakeB == true){
-            rarity = fakeVal2;
-            console.log(rarity);
-
-            var fakeNum = number(rarity);
-            numberv = fakeNum[0];
-            var color4 = fakeNum[1];
-            var B = rarity + '' + numberv;
-
-            $('#b').html(B);
-            $('#b').css('color', color4);
-            setTimeout(function(){ 
-                $('#b').animate('color', color2, function(){
-                    $('#b').html(b);
-                    $('#b').css('color', color2);
-                });
-            }, 3000);
-        } else {
-            $('#b').html(b);
-            $('#b').css('color', color2);
-        }
+        var b = rarity + '-' + numberv;
+        $('#b').html(b);
+        $('#b').css('color', color2);
     }
 
     cardLoad();
 
     $(".cardReset").click( function() {
+        $("#a").removeClass('Mythic');
+        $("#b").removeClass('Mythic');
+
         $(".left a").addClass('disabled');
         $(".card").addClass('disabled');
         setTimeout(function(){ 
