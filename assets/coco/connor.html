@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="coco.js"></script>
+    <script src="main.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="./coco.less"/>
+    <script src="../lib/less@4.js"></script>
+</head>
+<body>
+    <div id="settings">
+        <form action="javascript:urlUpdate();">
+            <div>
+                <label for="Common">Common</label>
+                <input type="number" id="Common" name="Common" placeholder="number...">
+            </div>
+            <div>
+                <label for="Uncommon">Uncommon</label>
+                <input type="number" id="Uncommon" name="Uncommon" placeholder="number...">
+            </div>
+            <div>
+                <label for="Rare">Rare</label>
+                <input type="number" id="Rare" name="Rare" placeholder="number...">
+            </div>
+            <div>
+                <label for="Epic">Epic</label>
+                <input type="number" id="Epic" name="Epic" placeholder="number...">
+            </div>
+            <div>
+                <label for="Legendary">Legendary</label>
+                <input type="number" id="Legendary" name="Legendary" placeholder="number...">
+            </div>
+            <div>
+                <label for="Mythic">Mythic</label>
+                <input type="number" id="Mythic" name="Mythic" placeholder="number...">
+            </div>
+            <input type="submit" value="Save">
+            <input type="button" class="cardReset" value="Restart">
+        </form>
+    </div>
+    <div id="cardTable">
+        <div id="card1" class="card-container">
+            <div class="card">
+                <div id="a" class="back"></div>
+                <div class="front">I</div>
+            </div>
+        </div>
+        <div id="card2" class="card-container">
+            <div class="card">
+                <div id="b" class="back"></div>
+                <div class="front">II</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+<a class="cardReset">Restart</a>
+
+
+<div id="editable" contenteditable="true">
+    default
+</div>
+<button onclick="urlUpdate();">save</button>
+
+List of what do to:
+
+- Fake out animation (Shows up as uncommon but turns into a higher rarity) (5% to happen)
+- Troll animation (It shows up as Legendary or Mythic but then turns into a lower rarity) (1% to happen)
+
+Maybe
+- 3rd card if you get a dupe
+- If you get 3 of the same card (Common 2, Common 2, Common 2) you get no cards and the website just turns all black (edited)
+
+-->
