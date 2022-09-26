@@ -2,14 +2,6 @@
 
 My website will go threw many stages and have many versions.
 
-
-## Wanted Features
-
-- Light/dark mode toggle
-- Duck :)
-- Animations
-
-
 ## My Links
 
 - Github: [@DaKirby](https://github.com/VIOLETUMM)
