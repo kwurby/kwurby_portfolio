@@ -102,6 +102,10 @@
     -webkit-text-fill-color: #3fa84d;
   }
 }
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 body {
   background-color: #1f0b28;
   padding: 0px;
@@ -109,10 +113,9 @@ body {
   margin: 0px;
   font-family: 'Rubik', sans-serif;
 }
-header {
+nav {
   position: relative;
   margin: 0px;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -120,10 +123,20 @@ header {
   width: 100%;
   height: 6rem;
 }
-header .TwentyS {
+@media (max-width: 400px) {
+  nav {
+    display: none;
+  }
+}
+@media (min-width: 400px) {
+  nav {
+    display: flex;
+  }
+}
+nav .TwentyS {
   transition: 0.2s;
 }
-header div {
+nav div {
   margin: 0px 3rem;
   padding: 4px 12px;
   font-weight: bold;
@@ -134,7 +147,7 @@ header div {
   align-items: center;
   justify-content: center;
 }
-header .HeaderColor {
+nav .HeaderColor {
   width: 3rem;
   display: flex;
   flex-direction: row;
@@ -147,14 +160,14 @@ header .HeaderColor {
   box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0);
   font-size: 1.1em;
 }
-header :hover .CText {
+nav :hover .CText {
   transform: scale(0.85);
 }
-header .HeaderColor:hover {
+nav .HeaderColor:hover {
   background-color: #009edd;
   box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.589);
 }
-header .ghover {
+nav .ghover {
   color: #009edd;
   margin: 0px 3rem;
   padding: 4px 12px;
@@ -163,26 +176,45 @@ header .ghover {
   cursor: pointer;
   opacity: 0.3;
 }
-header .ghover:hover {
+nav .ghover:hover {
   opacity: 1;
 }
 .intro {
   position: relative;
-  height: 40rem;
   width: 100%;
   cursor: default;
   font-family: 'Rubik Mono One', sans-serif;
 }
+@media (max-width: 400px) {
+  .intro {
+    height: 15rem;
+  }
+}
+@media (min-width: 400px) {
+  .intro {
+    height: 40rem;
+  }
+}
 .intro .title {
-  font-size: 25em;
   font-weight: bolder;
   position: absolute;
   padding: 0px;
-  margin: 0px;
   color: #009edd;
   opacity: 0.6;
   z-index: 1;
   transition: 0.2s;
+}
+@media (max-width: 400px) {
+  .intro .title {
+    font-size: 5em;
+    margin: 2rem 0px 0px 1rem;
+  }
+}
+@media (min-width: 400px) {
+  .intro .title {
+    font-size: 25em;
+    margin: 0px;
+  }
 }
 .intro .title:hover {
   opacity: 0.9;
@@ -190,14 +222,24 @@ header .ghover:hover {
 .intro div {
   color: #3fa84d;
   position: absolute;
-  top: 16rem;
   left: 35%;
-  font-size: 10em;
   font-weight: bolder;
   opacity: 0.6;
   z-index: 2;
   transition: 0.2s;
   white-space: nowrap;
+}
+@media (max-width: 400px) {
+  .intro div {
+    font-size: 2em;
+    top: 8rem;
+  }
+}
+@media (min-width: 400px) {
+  .intro div {
+    font-size: 10em;
+    top: 16rem;
+  }
 }
 .intro div:hover {
   opacity: 0.9;
@@ -213,10 +255,20 @@ header .ghover:hover {
 }
 .socials svg {
   fill: #3fa84d;
-  width: 8rem;
-  margin: 2rem;
   filter: drop-shadow(0px 2px 4px #00000094);
   z-index: 1;
+}
+@media (max-width: 400px) {
+  .socials svg {
+    width: 4rem;
+    margin: 1rem;
+  }
+}
+@media (min-width: 400px) {
+  .socials svg {
+    width: 8rem;
+    margin: 2rem;
+  }
 }
 .fade-in {
   opacity: 1;

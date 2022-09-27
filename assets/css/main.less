@@ -122,6 +122,12 @@
         -webkit-text-fill-color: @tertiary;
     }
 }
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
 
 body {
     background-color: @mainColor;
@@ -130,13 +136,22 @@ body {
     margin: 0px;
 
     font-family: 'Rubik', sans-serif;
+
 }
 
-header {
+nav {
+
     position: relative;
 
     margin: 0px;
-    display: flex;
+    @media (max-width: 400px) {
+        display: none;
+    }
+    @media (min-width: 400px) {
+        display: flex;
+    }
+
+
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -201,20 +216,29 @@ header {
 
 .intro {
     position: relative;
-
-
-    height: 40rem;
+    @media (max-width: 400px) {
+        height: 15rem;
+    }
+    @media (min-width: 400px) {
+        height: 40rem;
+    }
     width: 100%;
     cursor: default;
 
     font-family: 'Rubik Mono One', sans-serif;
 
     .title {
-        font-size:25em;
+        @media (max-width: 400px) {
+            font-size:5em;
+            margin: 2rem 0px 0px 1rem;
+        }
+        @media (min-width: 400px) {
+            font-size:25em;
+            margin: 0px;
+        }
         font-weight: bolder;
         position:absolute;
         padding: 0px;
-        margin: 0px;
         color: @secondary;
         opacity: 0.6;
         z-index: 1;
@@ -224,12 +248,18 @@ header {
         opacity: 0.9;
     }
     div {
+        @media (max-width: 400px) {
+            font-size:2em;
+            top: 8rem;
+        }
+        @media (min-width: 400px) {
+            font-size:10em;
+            top: 16rem;
+        }
         color: @tertiary;
 
         position:absolute;
-        top: 16rem;
         left: 35%;
-        font-size:10em;
         font-weight: bolder;
         opacity: 0.6;
         z-index: 2;
@@ -255,10 +285,16 @@ header {
 
     svg {
         fill: @tertiary;
-        width: 8rem;
-        margin: 2rem;
         filter: @dropShadow;
         z-index: 1;
+        @media (max-width: 400px) {
+            width: 4rem;
+            margin: 1rem;
+        }
+        @media (min-width: 400px) {
+            width: 8rem;
+            margin: 2rem;
+        }
     }
 }
 
