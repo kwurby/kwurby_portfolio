@@ -2,18 +2,28 @@ $(document).ready(function() {
     //NOTE: This is the code that is used to get the data from the url.
     var Url = window.location.href; 
     var urlData = Url.indexOf("?") + 1;
-    console.log(atob(Url.substring(urlData)));
-    urlString = atob(Url.substring(urlData));
+    if (urlData != 0) {
+        console.log(atob(Url.substring(urlData)));
+        urlString = atob(Url.substring(urlData));
 
-    var DataIn = urlString.split(',');
+        var DataIn = urlString.split(',');
 
 
-    var Common = DataIn[0];
-    var Uncommon = DataIn[1];
-    var Rare = DataIn[2];
-    var Epic = DataIn[3];
-    var Legendary = DataIn[4];
-    var Mythic = DataIn[5];
+
+        var Common = DataIn[0];
+        var Uncommon = DataIn[1];
+        var Rare = DataIn[2];
+        var Epic = DataIn[3];
+        var Legendary = DataIn[4];
+        var Mythic = DataIn[5];
+    } else {
+        var Common = 1;
+        var Uncommon = 1;
+        var Rare = 1;
+        var Epic = 1;
+        var Legendary = 1;
+        var Mythic = 1;
+    }
 
     document.getElementById('Common').value = Common;
     document.getElementById('Uncommon').value = Uncommon;
