@@ -23,16 +23,16 @@ $(document).ready(function() {
     document.getElementById('Mythic').value = Mythic;
 
     function main() {
-        chance = Math.floor(Math.random() * 130) + 1
-        if (chance <= 1) {
+        chance = Math.floor(Math.random() * 5000) + 1
+        if (chance <= 15) {
             return 'Mythic';
-        } else if (chance <= 6) {
+        } else if (chance <= 65) {
             return 'Legendary';
-        } else if (chance <= 15) {
+        } else if (chance <= 232) {
             return 'Epic';
-        } else if (chance <= 31) {
+        } else if (chance <= 733) {
             return 'Rare';
-        } else if (chance <= 57) {
+        } else if (chance <= 2400) {
             return 'Uncommon';
         } else {
             return 'Common';
@@ -73,41 +73,7 @@ $(document).ready(function() {
 
         //NOTE: =========================================================================================
         else if (rarity == 'Mythic'){
-            return [(Math.floor(Math.random() * Mythic) + 1), '#e5ff00'];
-        }
-    }
-
-    function fakeout(rarity){
-        if (rarity == 'Common'){
-            rollC = (Math.floor(Math.random() * 2) + 1)
-            if(rollC == 1){
-                return "Legendary"
-            } else {
-                return "Mythic"
-            }
-        } else if (rarity == 'Epic'){
-            rollE = (Math.floor(Math.random() * 2) + 1)
-            if(rollE == 1){
-                return "Common"
-            } else{
-                return "Uncommon"
-            }
-        } else if (rarity == 'Legendary'){
-            rollR = (Math.floor(Math.random() * 2) + 1)
-            if(rollR == 1){
-                return "Common"
-            } else{
-                return "Uncommon"
-            }
-        } else if (rarity == 'Mythic'){
-            rollR2 = (Math.floor(Math.random() * 2) + 1)
-            if(rollR2 == 1){
-                return "Common"
-            } else{
-                return "Uncommon"
-            }
-        } else {
-            return "Common"
+            return [(Math.floor(Math.random() * Mythic) + 1), '#ff0000'];
         }
     }
 
@@ -117,29 +83,66 @@ $(document).ready(function() {
 
     function cardLoad(){
         //NOTE: card 1
+        var saveChance = 1000;
+
+        star = Math.floor(Math.random() * saveChance) + 1
+        var cont = '';
+        if (star == 1){
+            cont = `
+            <div id="star">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            </div>
+            `;
+        }
+
         var rarity = main();
         if (rarity == 'Mythic'){
             $("#a").addClass('Mythic')
         };
 
         var funreturn = number(rarity);
-        var numberv = funreturn[0]
-        var color1 = funreturn[1]
-        var a = rarity + '-' + numberv;
-        $('#a').html(a);
-        $('#a').css('color', color1);
+        var numberv = funreturn[0];
+        var color1 = funreturn[1];
+        cont = cont + numberv;
+        console.log(cont);
+        $('#a').html(cont);
+        $('#a').css({
+            'color': color1,
+            'background-image': `linear-gradient(#291624 50%, ${color1}5d)`
+        });
+        $('#a #star svg').css({
+            'fill': color1
+        });
 
         //NOTE: card 2
+
+        star = Math.floor(Math.random() * saveChance) + 1
+        var cont = '';
+        if (star == 1){
+            cont = `
+            <div id="star">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            </div>
+            `;
+        }
+
         var rarity = main();
         if (rarity == 'Mythic'){
             $("#b").addClass('Mythic')
         };
         var funreturn = number(rarity);
-        var numberv = funreturn[0]
-        var color2 = funreturn[1]
-        var b = rarity + '-' + numberv;
-        $('#b').html(b);
-        $('#b').css('color', color2);
+        var numberv = funreturn[0];
+        var color2 = funreturn[1];
+        cont = cont + numberv;
+        console.log(cont);
+        $('#b').html(cont);
+        $('#b').css({
+            'color': color2,
+            'background-image': `linear-gradient(#291624 50%, ${color2}5d)`
+        });
+        $('#b #star svg').css({
+            'fill': color2
+        });
     }
 
     cardLoad();
@@ -156,5 +159,10 @@ $(document).ready(function() {
             $(".card").removeClass('disabled');
         }, 1000);
         $(".card").removeClass('flip');
+    });
+
+    $("#setBut").click( function() {
+        $("#settings").toggleClass('menu');
+        $("#settings").toggleClass('menuNone');
     });
 });
