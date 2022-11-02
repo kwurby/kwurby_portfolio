@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>V3 | in development</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <title>under development</title>
 
-    <!--Fonts-->
+    <!--Pants-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">
@@ -15,159 +16,103 @@
         font-family: 'Fira Code', monospace;
         font-family: 'Rubik', sans-serif;
         font-family: 'Rubik Mono One', sans-serif;
-    --> 
+    -->
 
-    <!--https://flaticons.net-->
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/main.css">
 
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <!--LIB/S-->
+    <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
 
-    <!--Libs-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
-    <script src="assets/lib/locomotive-scroll.min.js"></script>
-    <link rel="stylesheet" href="assets/lib/locomotive-scroll.min.css">
+    <!--JS-->
+    <!--I hate js so much man, there better be nothing here at all-->
 
-    <!--js-->
-    <!-- <script src="assets/js/main.js"></script> -->
+    <!--NOOOOOOOOOO ( T - T )-->
+    <script src="./assets/js/index.js"></script>
 </head>
-<body data-scroll-container>
-    <nav data-scroll-section>
-        <div
-        class="HeaderColor TwentyS">
-            <a class="CText TwentyS">null</a>
-        </div>
-
-        <a
-        id="about"
-        data-anijs="if: click, do: rubberBand animated" 
-        class="ghover TwentyS">
-        About</a>
-
-        <a
-        id="works"
-        data-anijs="if: click, do: rubberBand animated" 
-        class="ghover TwentyS">
-        Works</a>
-
-        <a
-        id="socials"
-        data-anijs="if: click, do: rubberBand animated" 
-        class="ghover TwentyS">
-        Socials</a>
+<body>
+    <nav>
+        <a href="#about" class="navObj"><div class="dot"><span>⬤</span></div><span class="text">about me</span></a>
+        <a href="#projects" class="navObj"><div class="dot"><span>⬤</span></div><span class="text">projects</span></a>
+        <a href="#contact" class="navObj"><div class="dot"><span>⬤</span></div><span class="text">say hi!</span></a>
+        <!--EZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-->
     </nav>
-    <div class="intro" data-scroll-section>
-        <p 
-        class="title" 
-        data-scroll 
-        data-scroll-direction="horizontal"
-        data-scroll-speed="2"
-        aria-label="">
-        Hello
-        </p>
 
-        <div 
-        data-scroll
-        data-scroll-direction="horizontal"
-        data-scroll-speed="4"
-        aria-label="">
-        〵(ò‿ó∘)〴
-        </div>
-    </div>
-    <div class="about contSec" data-scroll-section>
-        <h1 
-        class="fillgrad section-header"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="2">> about</h1>
-        <div 
-        class="contbox dark"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="2">
-            <p>
-                hello! I am a front end web developer, currently working on being full stack... not quite there yet.
+    <section id="top">
+        <div class="title">
+            <p class="tt">
+                DaKirby
+                <br>
+                <span class="sub">definitely my name</span>
+            </p>
+            <p class="cont">
+                welcome to my webpage, my portfolio? Um, I do front-end development and I can also use python to organize and read data.
+                If you wish to look at the code for this website then check out my <a class="link" target="_blank" href="https://github.com/VIOLETUMM">Github</a>!
             </p>
         </div>
-    </div>
+        <div class="hr">
+            <a href="#about">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </a>
+        </div>
+    </section>
 
-    <div class="works contSec" data-scroll-section>
-        <h1 
-        class="fillgrad section-header"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="2">> works</h1>
-        <div
-        class="contbox cards"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="2">
-            <div class="card current">
-                <h2>Current =></h2>
-                <p><a class="numbers">01</a> only one thing happening</p>
-                <p><a class="numbers">02</a> currently</p>
-                <p><a class="numbers">03</a> </p>
-                <p><a class="numbers">04</a> <a class="projLink" href="./assets/coco/connor.html">cards for coco:</a></p>
-                <p><a class="numbers">05</a> a card 'gambling' game</p>
-                <p><a class="numbers">06</a> - just card opening</p>
-                <p><a class="numbers">07</a> - some animations</p>
-                <p><a class="numbers">08</a> </p>
+    <section id="about">
+        <div class="container">
+            <div class="cont">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde tenetur vero ratione ex quibusdam expedita vitae soluta adipisci commodi? Veniam obcaecati, unde quo nemo voluptatum totam autem consectetur ducimus soluta!</p>
             </div>
-            <div class="card past">
-                <h2>Past =></h2>
-                <p><a class="numbers">01</a> No past projects yet :/</p>
-                <p><a class="numbers">02</a> </p>
-                <p><a class="numbers">03</a> </p>
-                <p><a class="numbers">04</a> </p>
-                <p><a class="numbers">05</a> </p>
-                <p><a class="numbers">06</a> </p>
-                <p><a class="numbers">07</a> </p>
-                <p><a class="numbers">08</a> </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="cont">
+                <h1>Quirky Projects</h1>
+
+                <div class="projectList">
+                    <div class="project" class="current">
+                        <h2>Current</h2>
+                        <div class="imgContainer">
+                            <img src="./assets/images/proj_coco.png" alt="coco Card game">
+                        </div>
+                    </div>
+                    <div class="project" class="favorite">
+                        <h2>Favorite</h2>
+                        <div class="imgContainer">
+                            <img src="./assets/images/proj_coco.png" alt="coco Card game">
+                        </div>
+                    </div>
+                    <div class="project" class="more">
+                        <h2 class="moreH2">more</h2>
+                    </div>
+                </div>
+
             </div>
-            <!--
-                ./assets/coco/connor.html
-            -->
         </div>
-    </div>
+    </section>
 
-    <div class="socials contSec" data-scroll-section>
-        <h1 
-        class="fillgrad section-header"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="4">> socials</h1>
-        <div 
-        class="contbox dark"
-        data-scroll
-        data-scroll-class="fade-in" data-scroll-repeat="true"
-
-        data-scroll-direction="vertical"
-        data-scroll-speed="4">
-            <p>
-                Go take a look at my Twitter! or don't... it is basicly all spam.
-                If you wanna be disapointed go take a look.
-            </p>
+    <section id="contact">
+        <div class="container">
+            <div class="cont">
+                <h1>contact Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde tenetur vero ratione ex quibusdam expedita vitae soluta adipisci commodi? Veniam obcaecati, unde quo nemo voluptatum totam autem consectetur ducimus soluta!</p>
+            </div>
         </div>
-        <div  data-scroll data-scroll-direction="vertical" data-scroll-speed="2">
-            <a href="https://twitter.com/VIOLETUWU_ALEX" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg></a>
-            <a href="https://github.com/VIOLETUMM" target="_blank"><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true">        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-        </div>
-    </div>
+    </section>
 
-    <script src="assets/js/scroll.js"></script>
-    <!--Animation lib: https://anicollection.github.io/#/-->
-    <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
-    <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+    <section id="bottom">
+        <!--Like you lol ^^^-->
+    </section>
+    <!--
+        "mamaememe why no header and footer"
+        ...
+        Because that is stupid! I refuse!!!!
+        I am changing my css file back to index.css
+        I don't care, smh.
+
+        I will later to much work.
+    -->
 </body>
 </html>
