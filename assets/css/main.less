@@ -14,8 +14,8 @@ html {scroll-behavior: smooth;}
 
 //! ------ Vars ------
 @main:#ffffff;
-@bubble:#bfbfbfff;
-@outline: #96939bff;
+@bubble:#fcfde7;
+@outline: #6f6d72;
 @text:#241f24;
 @accent:#7e3f8fff;
 @secondary: #FA8970;
@@ -26,6 +26,7 @@ html {scroll-behavior: smooth;}
 @inner-nav: @main;
 @outline-nav: @text;
 @dropShadow: drop-shadow( 0px 4px 4px #36363648);
+@borderR: 6px;
 //! -------------------
 
 :root {
@@ -48,12 +49,15 @@ html {scroll-behavior: smooth;}
 
 //? Reactive-Width < wr
 .width-reactive {
-    @media (min-width: 970px) {
-        width: 50%;
-    }
-    @media (max-width: 970px) {
-        width: 90%;
-    }
+    // @media (min-width: 970px) {
+    //     width: 50%;
+    // }
+    // @media (max-width: 970px) {
+    //     width: 90%;
+    // }
+
+    width: 1000px;
+    max-width: calc(100% - 100px);
 }
 
 .fillgrad {
@@ -86,8 +90,27 @@ html {scroll-behavior: smooth;}
 //?#   ================================================================
 //?#   =                        Sections css                          =
 //?#   ================================================================
-
+@keyframes fade-out{
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}
+@keyframes fade-in{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
 nav {
+    @media (min-width: 1300px) {
+        animation-name: fade-in;
+        animation-duration: 0.2s;
+        pointer-events: none;
+        animation-fill-mode: forwards;
+    }
+    @media (max-width: 1300px) {
+        animation-name: fade-out;
+        animation-duration: 0.2s;
+        pointer-events: none;
+        animation-fill-mode: forwards;
+    }
     position: fixed;
     top: 50%;
     left: 0px;
@@ -202,71 +225,103 @@ nav {
 #projects {
     .sectionBaseDefault();
     .projectList {
-        display: grid;
-        gap: 20px;
-        @media (min-width: 970px) {
-            grid-template-columns: auto auto;
-            justify-content: space-between;
+
+        @cardWidth: 450px;
+
+        @media (min-width: 880px) {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fill, calc(50% - 10px));
         }
-        @media (max-width: 970px) {
-            grid-template-columns: auto;
-            justify-content: space-around;
+        @media (max-width: 880px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .project {
-            * {.tr02();}
-            img {
-                width: 400px;
-                filter: saturate(0);
-                opacity: 60%;
-                border-radius: 5px;
-            }
-            h2 {
-                position: absolute;
-                z-index: 6;
-                color: @secondary;
-                &:not(.moreH2){
-                    filter: @dropShadow;
-                    transform: translateX(10px);
-                }
-                &::after {
-                    z-index: -111111;
-                    display: block;
-                    position: relative;
-                    width: 100%;
-                    height: 5px;
-                    background-color: @secondary;
-                    content: "";
-                    .tr02();
-                }
-            }
-            width: 100%;
+            .tr02();
             &:hover {
-                & img {
-                    filter: saturate(1);
-                    opacity: 100%;
-                }
-                & h2::after {
-                    // transform: translateY(calc(-2rem + 5px));
-                    transform: translateY(-2rem);
-                    height: 2rem;
-                }
+                transform: translateY(-20px);
+            }
+            margin: 20px auto;
+            padding: 6px;
+            box-sizing: border-box;
 
-                & h2:not(.moreH2){
-                    filter: @dropShadow;
-                    transform: translateX(-20px);
-                }
+            width: @cardWidth;
+            max-width: calc(100% - 20px);
+            border-radius: calc(@borderR * 2);
+            border: 1px solid @outline;
+            background: @main;
+            max-height: 490px;
+            min-height: fit-content;
 
-                & h2 {
-                    color: @main;
+            filter: @dropShadow;
+            h2 {
+                font-family: 'Rubik', sans-serif;
+                position: absolute;
+                margin: 12px 10px;
+                padding: 6px 12px;
+                font-size: 1.2rem;
+                border-radius: @borderR;
+                filter: @dropShadow;
+            }
+            .white { //? TITLES
+                color: @main;
+                background-color: #241f2417;
+                backdrop-filter: blur(10px);
+                // background-color: @accent;
+                // background-image: linear-gradient(135deg, @accent, @secondary);
+                // border: 2px solid @main;
+            }
+            img {
+                width: 100%;
+                border-radius: @borderR;
+            }
+            .txtCont {
+                box-sizing: border-box;
+                width: 100%;
+                h3 {
+                    box-sizing: border-box;
+                    padding: 0px 20px;
+                    font-family: 'Rubik', sans-serif;
+                    font-size: 1.5rem;
+                    color: @accent;
+                }
+                p {
+                    box-sizing: border-box;
+                    height: 60px;
+                    padding: 0px 20px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    white-space: wrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: @text;
+                }
+                .links {
+                    box-sizing: border-box;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    a {
+                        box-sizing: border-box;
+                        margin: 20px;
+                        padding: 6px 12px;
+                        text-decoration: none;
+                        border: 1px solid @text;
+                        border-radius: @borderR;
+                        background: @main;
+                        color: @text;
+                        .tr02();
+                        &:hover {
+                            filter: brightness(0.9);
+                        }
+                    }
                 }
             }
-        }
-        .current, .favorite {
-            grid-area: 1;
-        }
-        .more {
-            grid-row: 2 / span 2;
         }
     }
 }
