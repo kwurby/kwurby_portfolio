@@ -1,4 +1,4 @@
-//?^ -=- Stuff for pretty much all my projects -=-
+//?^ Stuff for pretty much all my projects
 body {
     font-family: 'Fira Code', monospace;
     padding: 0px;
@@ -26,7 +26,7 @@ html {scroll-behavior: smooth;}
 @inner-nav: @main;
 @outline-nav: @text;
 @dropShadow: drop-shadow( 0px 4px 4px #36363648);
-@borderR: 6px;
+@borderR: 3px;
 //! -------------------
 
 :root {
@@ -102,7 +102,6 @@ nav {
     @media (min-width: 1300px) {
         animation-name: fade-in;
         animation-duration: 0.2s;
-        pointer-events: none;
         animation-fill-mode: forwards;
     }
     @media (max-width: 1300px) {
@@ -111,6 +110,7 @@ nav {
         pointer-events: none;
         animation-fill-mode: forwards;
     }
+    box-sizing: border-box;
     position: fixed;
     top: 50%;
     left: 0px;
@@ -207,6 +207,7 @@ nav {
 
 //? Just my basic setup for my sections.
 .sectionBaseDefault {
+    box-sizing: border-box;
     .section();
     .container {
         .cont {
@@ -220,6 +221,34 @@ nav {
 
 #about {
     .sectionBaseDefault();
+    .board {
+        font-size: 1.2em;
+        box-sizing: border-box;
+        width: 70%;
+        .skill {
+            width: fit-content;
+        }
+        .chips {
+            box-sizing: border-box;
+            margin: 40px 5px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            span {
+                font-size: 0.8em;
+                box-sizing: border-box;
+                margin: 8px;
+                padding: 3px 6px;
+                border: 1px solid;
+                border-radius: calc(@borderR);
+            }
+            .green {color: green;}
+            .red {color: red;}
+            .orange {color: orange;}
+            .blue {color: blue;}
+            .purple {color: purple;}
+        }
+    }
 }
 
 #projects {
@@ -244,24 +273,32 @@ nav {
             &:hover {
                 transform: translateY(-20px);
             }
+
+            //bounds
             margin: 20px auto;
             padding: 6px;
             box-sizing: border-box;
 
+            //size
             width: @cardWidth;
             max-width: calc(100% - 20px);
-            border-radius: calc(@borderR * 2);
-            border: 1px solid @outline;
-            background: @main;
             max-height: 490px;
             min-height: fit-content;
 
+            //looks
+            border-radius: calc(@borderR * 2);
+            border: 1px solid @outline;
+            background: @main;
             filter: @dropShadow;
+
             h2 {
-                font-family: 'Rubik', sans-serif;
+                //bounds
                 position: absolute;
                 margin: 12px 10px;
                 padding: 6px 12px;
+
+                //looks
+                font-family: 'Rubik', sans-serif;
                 font-size: 1.2rem;
                 border-radius: @borderR;
                 filter: @dropShadow;
@@ -270,9 +307,6 @@ nav {
                 color: @main;
                 background-color: #241f2417;
                 backdrop-filter: blur(10px);
-                // background-color: @accent;
-                // background-image: linear-gradient(135deg, @accent, @secondary);
-                // border: 2px solid @main;
             }
             img {
                 width: 100%;
@@ -284,13 +318,13 @@ nav {
                 h3 {
                     box-sizing: border-box;
                     padding: 0px 20px;
+
                     font-family: 'Rubik', sans-serif;
                     font-size: 1.5rem;
-                    color: @accent;
+                    color: @secondary;
                 }
                 p {
                     box-sizing: border-box;
-                    height: 60px;
                     padding: 0px 20px;
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
@@ -298,18 +332,22 @@ nav {
                     white-space: wrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+
+                    height: 60px;
                     color: @text;
                 }
                 .links {
                     box-sizing: border-box;
-                    width: 100%;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+
+                    width: 100%;
                     a {
                         box-sizing: border-box;
                         margin: 20px;
                         padding: 6px 12px;
+
                         text-decoration: none;
                         border: 1px solid @text;
                         border-radius: @borderR;
@@ -327,5 +365,36 @@ nav {
 }
 
 #contact {
+    padding: 100px 0px 200px;
     .sectionBaseDefault();
+    h1 {
+        text-align: center;
+    }
+    .cont {
+        div {
+            padding:20px 0px 100px;
+            box-sizing: border-box;
+
+            p {
+                text-align: center;
+            }
+            a {
+                display: block;
+                width: fit-content;
+                box-sizing: border-box;
+                margin: 20px auto;
+                padding: 10px 20px;
+
+                text-decoration: none;
+                border: 1px solid @text;
+                border-radius: @borderR;
+                background: @main;
+                color: @text;
+                .tr02();
+                &:hover {
+                    filter: brightness(0.9);
+                }
+            }
+        }
+    }
 }
