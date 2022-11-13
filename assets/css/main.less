@@ -90,26 +90,31 @@ html {scroll-behavior: smooth;}
 //?#   ================================================================
 //?#   =                        Sections css                          =
 //?#   ================================================================
-@keyframes fade-out{
-    from {opacity: 100%;}
-    to {opacity: 0%;}
-}
-@keyframes fade-in{
-    from {opacity: 0%;}
-    to {opacity: 100%;}
-}
-nav {
-    @media (min-width: 1300px) {
+.fadeAnimation(@width){
+    @keyframes fade-out{
+        from {opacity: 100%;}
+        to {opacity: 0%;}
+    }
+    @keyframes fade-in{
+        from {opacity: 0%;}
+        to {opacity: 100%;}
+    }
+
+    @media (min-width: @width) {
         animation-name: fade-in;
         animation-duration: 0.2s;
         animation-fill-mode: forwards;
     }
-    @media (max-width: 1300px) {
+    @media (max-width: @width) {
         animation-name: fade-out;
         animation-duration: 0.2s;
         pointer-events: none;
         animation-fill-mode: forwards;
     }
+}
+
+nav {
+    .fadeAnimation(1300px);
     box-sizing: border-box;
     position: fixed;
     top: 50%;
@@ -168,12 +173,25 @@ nav {
     .title {
         padding: 8px 0px 80px 20%;
         .tt {
-            font-size: 8em;
             font-family: 'Rubik', sans-serif;
             .fillgrad();
             background-color: @secondary;
             background-image: linear-gradient( @secondary, @accent);
+
+            @media (min-width: 660px) {
+                font-size: 8em;
+            }
+            @media (max-width: 660px) {
+                font-size: 20vw;
+            }
+
             .sub {
+                @media (min-width: 1001px) {
+                    display: block;
+                }
+                @media (max-width: 1001px) {
+                    display: none;
+                }
                 font-size: .7em;
             }
             margin-bottom: 0px;
@@ -224,7 +242,11 @@ nav {
     .board {
         font-size: 1.2em;
         box-sizing: border-box;
-        width: 70%;
+        // max-width: 70%;
+
+        width: 800px;
+        max-width: calc(100% - 20px);
+
         .skill {
             width: fit-content;
         }
