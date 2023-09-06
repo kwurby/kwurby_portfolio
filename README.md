@@ -1,10 +1,10 @@
-# Vi0letWeb
+# kwurby_portfolio
 
 My website will go threw many stages and have many versions.
 
 ## My Links
 
-- Github: [@DaKirby](https://github.com/VIOLETUMM)
-- Twitter: [@VIOLETUWU_ALEX](https://twitter.com/VIOLETUWU_ALEX)
+- Github: [@Kwurby](https://github.com/VIOLETUMM)
+- Twitter: [@Kwurby](https://twitter.com/VIOLETUWU_ALEX)
 
 >lets not look at my twitter
